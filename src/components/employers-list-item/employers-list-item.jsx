@@ -1,13 +1,15 @@
 import "./employers-list-item.css";
 
-const EmployersListItem = () => {
+const EmployersListItem = ({fullName, salary, increase}) => {
+    const isAwarded = `list-group-item d-flex justify-content-between ${increase ? "increase" : ""}`;
+
     return (
-        <li className="list-group-item d-flex justify-content-between">
-            <span className="list-group-item-label">Vlad Chosenko</span>
+        <li className={isAwarded}>
+            <span className="list-group-item-label">{fullName}</span>
             <input 
                 type="text" 
                 className="list-group-item-input" 
-                defaultValue="1000$"/>
+                defaultValue={salary + "$"}/>
             <div className="d-flex justify-content-center align-items-center">
                 <button 
                     type="button" 
