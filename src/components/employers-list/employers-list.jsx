@@ -9,7 +9,6 @@ const EmployersList = () => {
                 key={item.id}
                 fullName={item.fullName} 
                 salary={item.salary}
-                increase={item.increase}
             />
         );
     });
