@@ -3,6 +3,8 @@ import AppInfo from "../app-info/app-info";
 import EmployersAddForm from "../employers-add-form/employers-add-form";
 import EmployersList from "../employers-list/employers-list";
 import SearchPanel from "../search-panel/search-panel";
+import employees from "../../data/employees";
+
 import "./app.css";
 
 
@@ -14,7 +16,7 @@ function App() {
                 <SearchPanel />
                 <AppFilter />
             </div>
-            <EmployersList />
+            <EmployersList data={employees}/>
             <EmployersAddForm />
         </div>
     );
