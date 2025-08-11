@@ -1,11 +1,11 @@
 .list-group-item {
     padding: 15px 20px;
-    border-bottom: 1px solid #d3d3d3;
+    border-bottom: 1px solid #dee2e6;
 }
 
-.list-group-item:last-child {
+/* .list-group-item:last-child {
     border-bottom: none;
-}
+} */
 
 .list-group-item span {
     line-height: 35px;
@@ -30,11 +30,11 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #ffe6c0;
+    background-color: #f1f7ff;
 }
 
 .list-group-item .btn-trophy {
-    color: #ffc266;
+    color: #156ef2;
 }
 
 .list-group-item .btn-trash {
@@ -60,7 +60,7 @@
 }
 
 .list-group-item.increase .list-group-item-label, .list-group-item.increase .list-group-item-input {
-    color: #ffc266;
+    color: #156ef2;
 }
 
 .list-group-item.increase .btn-star {

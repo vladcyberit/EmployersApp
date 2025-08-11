@@ -1,8 +1,13 @@
 .search-panel {
     margin-top: 30px;
     padding: 40px;
-    background-color: #14213F;
+    background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 15px 15px 30px rgba(0, 0, 0, .15);
-    color: #ffffff;
+    border: 1px solid #dee2e6;
+    box-shadow: 1px 0px 8px 0px rgba(163,163,163,0.05);;
+    color: #000000;
+}
+
+.search-icon {
+    color: #595c5f;
 }

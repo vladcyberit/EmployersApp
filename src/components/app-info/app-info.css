@@ -3,11 +3,12 @@
     flex-direction: column;
 
     padding: 40px;
-    background-color: #14213F;
+    background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 15px 15px 30px rgba(0, 0, 0, .15);
+    border: 1px solid #dee2e6;
+    box-shadow: 1px 0px 8px 0px rgba(163,163,163,0.05);;
     gap: 20px;
-    color: #ffffff;
+    color: #000000;
 }
 
 .container-title {
@@ -29,7 +30,7 @@
     margin: 0;
     font-size: 22px;
     font-weight: 500;
-    color: #d3d3d3;
+    color: #000000;
 }
 
 .app-info-display {

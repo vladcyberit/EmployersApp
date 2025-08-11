@@ -1,12 +1,15 @@
 import { Component } from "react";
 import "./employers-add-form.css";
+import { IoAdd } from "react-icons/io5";
+
 
 class EmployersAddForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
             name: "",
-            salary: ""
+            salary: "",
+            jobTitle: ""
         };
     }
 
@@ -17,8 +20,8 @@ class EmployersAddForm extends Component {
     }
 
     render() {
-        const { name, salary } = this.state;
-        
+        const { name, jobTitle, salary } = this.state;
+
         return ( 
             <div className="app-add-form">
                 <h3>Add new employee</h3>
@@ -26,9 +29,15 @@ class EmployersAddForm extends Component {
                     className="add-form d-flex">
                     <input type="text" 
                         className="form-control new-post-label"
-                        placeholder="Name of an employee"
+                        placeholder="Name"
                         name="name"
                         value={name}
+                        onChange={this.onValueChange}/>
+                    <input type="text" 
+                        className="form-control new-post-label"
+                        placeholder="Job Title"
+                        name="jobTitle"
+                        value={jobTitle}
                         onChange={this.onValueChange}/>
                     <input type="number" 
                         className="form-control new-post-label"
@@ -38,7 +47,7 @@ class EmployersAddForm extends Component {
                         onChange={this.onValueChange}/>
 
                     <button type="submit"
-                        className="btn btn-outline-light">Add</button>
+                        className="btn btn-primary"><IoAdd className="add-icon"/>Add</button>
                 </form>
             </div>
         );
