@@ -1,12 +1,12 @@
 .app-info {
     display: flex;
     flex-direction: column;
-
+    margin-top: 30px;
     padding: 40px;
     background-color: #ffffff;
     border-radius: 10px;
     border: 1px solid #dee2e6;
-    box-shadow: 1px 0px 8px 0px rgba(163,163,163,0.05);;
+    box-shadow: 1px 0px 8px 0px rgba(163,163,163,0.05);
     gap: 20px;
     color: #000000;
 }

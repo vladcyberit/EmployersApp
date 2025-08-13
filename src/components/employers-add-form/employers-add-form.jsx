@@ -47,7 +47,7 @@ class EmployersAddForm extends Component {
                         onChange={this.onValueChange}/>
 
                     <button type="submit"
-                        className="btn btn-primary"><IoAdd className="add-icon"/>Add</button>
+                        className="btn btn-primary"><IoAdd className="add"/>Add</button>
                 </form>
             </div>
         );

@@ -23,7 +23,7 @@ class EmployersListItem extends Component {
     }
 
     render() {
-        const { fullName, salary, onDelete } = this.props;
+        const { fullName, jobTitle, salary, onDelete } = this.props;
         const { increase, like } = this.state;
         const isAwarded = `list-group-item d-flex justify-content-between${increase ? " increase" : ""}${like ? " like" : ""}`;
 
@@ -31,6 +31,7 @@ class EmployersListItem extends Component {
             <li className={isAwarded}>
                 <span className="list-group-item-label"
                     onClick={this.setLike}>{fullName}</span>
+                <span className="list-group-item-label">{jobTitle}</span>
                 <input 
                     type="text" 
                     className="list-group-item-input" 

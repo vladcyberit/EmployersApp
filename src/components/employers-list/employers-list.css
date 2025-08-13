@@ -5,3 +5,45 @@
     box-shadow: 1px 0px 8px 0px rgba(163,163,163,0.05);;
     color: #ffffff;
 }
+
+.list-titles {
+    padding: 10px 20px;
+    display: flex;
+    /* justify-content: space-between; */
+    border-radius: 10px 10px 0px 0px;
+    border: 1px solid #dee2e6;
+    border-bottom: none;
+    background-color: #F3F3F3;
+}
+
+.title-name {
+    line-height: 35px;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 302px;
+    color: #a8a8b9;
+}
+
+.title-job {
+    line-height: 35px;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 365px;
+    color: #a8a8b9;
+}
+
+.title-salary {
+    line-height: 35px;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 170px;
+    color: #b6b6bb;
+}
+
+.title-status {
+    line-height: 35px;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 115px;
+    color: #b6b6bb;
+}

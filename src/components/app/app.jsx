@@ -1,5 +1,6 @@
 import { Component } from "react";
 
+import AppHeader from "../app-header/app-header";
 import AppFilter from "../app-filter/app-filter";
 import AppInfo from "../app-info/app-info";
 import EmployersAddForm from "../employers-add-form/employers-add-form";
@@ -8,6 +9,7 @@ import SearchPanel from "../search-panel/search-panel";
 import employees from "../../data/employees";
 
 import "./app.css";
+import AppStats from "../app-stats/app-stats";
 
 
 class App extends Component {
@@ -29,7 +31,9 @@ class App extends Component {
 
         return (
             <div className="app">
-                <AppInfo />
+                <AppHeader />
+                <AppStats />
+                {/* <AppInfo /> */}
                 <div className="search-panel">
                     <SearchPanel />
                     <AppFilter />
