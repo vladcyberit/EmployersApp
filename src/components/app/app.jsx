@@ -1,6 +1,9 @@
 import { Component } from "react";
+import { v4 as uuidv4 } from 'uuid';
+
 
 import AppHeader from "../app-header/app-header";
+import AppStats from "../app-stats/app-stats";
 import AppFilter from "../app-filter/app-filter";
 import AppInfo from "../app-info/app-info";
 import EmployersAddForm from "../employers-add-form/employers-add-form";
@@ -9,8 +12,6 @@ import SearchPanel from "../search-panel/search-panel";
 import employees from "../../data/employees";
 
 import "./app.css";
-import AppStats from "../app-stats/app-stats";
-
 
 class App extends Component {
     constructor(props) {
@@ -21,9 +22,22 @@ class App extends Component {
     }
 
     deleteItem = (id) => {
-        this.setState(({data}) => {
-            return {data: data.filter(item => item.id !== id)};
-        });
+        this.setState(({data}) => ({
+            data: data.filter(item => item.id !== id)
+        }));
+    }
+
+    addItem = (fullName, jobTitle, salary) => {
+        const newEmployee = {
+            id: uuidv4(),
+            fullName: fullName,
+            jobTitle: jobTitle,
+            salary: salary,
+            increase: false
+        }
+        this.setState(({data}) => ({
+            data: [...data, newEmployee]
+        }));
     }
 
     render() {
@@ -41,7 +55,8 @@ class App extends Component {
                 <EmployersList 
                     data={data}
                     onDelete={this.deleteItem}/>
-                <EmployersAddForm />
+                <EmployersAddForm 
+                    onAdd={this.addItem}/>
             </div>
         );
     }
