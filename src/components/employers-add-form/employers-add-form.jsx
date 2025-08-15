@@ -23,8 +23,9 @@ class EmployersAddForm extends Component {
         e.preventDefault();
 
         const { fullName, jobTitle, salary } = this.state;
+        const { onAdd } = this.props;
 
-        this.props.onAdd(fullName, jobTitle, salary);
+        onAdd(fullName, jobTitle, salary);
         this.setState({
             fullName:"",
             salary: "",
