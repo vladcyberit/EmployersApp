@@ -1,0 +1,38 @@
+.list-item-blank {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 0px 0px 10px 10px;
+    border: 1px solid #dee2e6;
+    height: 73px;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.title-name-blank {
+    line-height: 35px;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 302px;
+}
+
+.title-job-blank {
+    line-height: 35px;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 365px;
+}
+
+.title-salary-blank {
+    line-height: 35px;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 170px;
+}
+
+.title-status-blank {
+    line-height: 35px;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 115px;
+}

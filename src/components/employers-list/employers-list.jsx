@@ -1,4 +1,7 @@
 import EmployersListItem from "../employers-list-item/employers-list-item";
+import EmployersListTitles from "../employers-list-titles/employers-list-titles";
+import ListItemBlank from "../list-item-blank/list-item-blank";
+
 import "./employers-list.css";
 
 const EmployersList = ({data, onDelete}) => {
@@ -17,13 +20,8 @@ const EmployersList = ({data, onDelete}) => {
 
     return ( 
         <ul className="app-list list-group">
-            <li className="list-titles">
-                <span className="title-name">Name</span>
-                <span className="title-job">Job Title</span>
-                <span className="title-salary">Salary</span>
-                <span className="title-status">Status</span>
-            </li>
-            {employeesItems}
+            <EmployersListTitles />
+            {data.length === 0 ? <ListItemBlank /> : employeesItems}
         </ul>
     );
 }

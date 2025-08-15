@@ -27,9 +27,9 @@ class EmployersAddForm extends Component {
 
         onAdd(fullName, jobTitle, salary);
         this.setState({
-            fullName:"",
+            fullName: "",
             salary: "",
-            jobTitle:""
+            jobTitle: ""
         });
     }
 
