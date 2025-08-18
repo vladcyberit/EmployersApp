@@ -4,17 +4,15 @@ import ListItemBlank from "../list-item-blank/list-item-blank";
 
 import "./employers-list.css";
 
-const EmployersList = ({data, onDelete}) => {
+const EmployersList = ({ data, onDelete, onToggleStatus }) => {
     const employeesItems = data.map(item => {
-        const { id, fullName, jobTitle, salary } = item;
+        const { id, ...itemProps } = item;
         return (
             <EmployersListItem 
                 key={id}
-                fullName={fullName}
-                jobTitle={jobTitle}
-                salary={salary}
+                {...itemProps}
                 onDelete={() => onDelete(id)}
-            />
+                onToggleStatus={(e) => onToggleStatus(id, e.currentTarget.dataset.toggle)} />
         );
     });
 

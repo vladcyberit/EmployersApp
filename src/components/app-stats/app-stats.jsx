@@ -1,13 +1,13 @@
 import StatsWidget from "../stats-widget/stats-widget";
 import "./app-stats.css";
 
-const AppStats = () => {
+const AppStats = ({ totalValue, rewardedValue }) => {
     return ( 
         <div className="app-stats-wrapper">
             <h1 className="stats-title">Manage Employees</h1>
             <div className="stats-container">
-                <StatsWidget icon={"public/totalEmp.svg"} title={"Total employees"} value={385}/>
-                <StatsWidget icon={"public/rewardedEmp.svg"} title={"Rewarded employees"} value={287}/>
+                <StatsWidget icon={"/totalEmp.svg"} title={"Total employees"} value={totalValue}/>
+                <StatsWidget icon={"/rewardedEmp.svg"} title={"Rewarded employees"} value={rewardedValue}/>
             </div>
         </div>
     );
