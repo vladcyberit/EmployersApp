@@ -16,6 +16,11 @@
     width: 350px;
     height: 40px;
     margin-right: 20px;
+    border: 1px solid #dee2e6;
+}
+
+.add-form input.invalid {
+    border: 1px solid #ff1f1f; 
 }
 
 .add-form button {
