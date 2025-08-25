@@ -1,7 +1,7 @@
 import { Component } from "react";
-import "./employers-add-form.css";
 import { IoAdd } from "react-icons/io5";
 
+import "./employers-add-form.css";
 
 class EmployersAddForm extends Component {
     constructor(props) {
@@ -93,6 +93,10 @@ class EmployersAddForm extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
+        
+        if (document.activeElement) {
+            document.activeElement.blur();
+        }
 
         const { fullName, jobTitle, salary } = this.state;
         const { onAdd } = this.props;

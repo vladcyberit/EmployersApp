@@ -1,7 +1,6 @@
 import { Component } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
-
 import AppHeader from "../app-header/app-header";
 import AppStats from "../app-stats/app-stats";
 import AppFilter from "../app-filter/app-filter";
@@ -16,7 +15,9 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: employees
+            data: employees,
+            searchQuery: "",
+            filter: ""
         }
     }
 
@@ -41,7 +42,6 @@ class App extends Component {
     }
 
     onToggleStatus = (id, status) => {
-        console.log(status);
         this.setState(({data}) => ({
             data: data.map(item => {
                 return (item.id === id) 
@@ -51,10 +51,44 @@ class App extends Component {
         }));
     }
 
+    handleChangeParent = (searchQuery) => {
+        this.setState({
+            searchQuery: searchQuery
+        });
+    }
+
+    handleSearchFilter = (data, searchQuery, filter) => {
+        let filteredData = [...data];
+        
+        if (filter === "all") {
+            filteredData
+        } else if (filter === "liked") {
+            filteredData = filteredData.filter(item => item.like) 
+        } else if (filter === "over") {
+            filteredData = filteredData.filter(item => item.salary > 9000)
+        }
+        
+        if (searchQuery.trim() !== "") {
+            filteredData = filteredData.filter(item => 
+            item.fullName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.jobTitle.toLowerCase().includes(searchQuery.toLowerCase())
+            );   
+        }
+
+        return filteredData;
+    }
+
+    buttonsFilter = (filterMethod) => {
+        this.setState({
+            filter: filterMethod
+        });
+    }
+
     render() {
-        const { data } = this.state;
+        const { data, searchQuery, filter } = this.state;
         const totalValue = data.length;
         const rewardedValue = data.filter(item => item.increase === true).length;
+        const visibleEmployees = this.handleSearchFilter(data, searchQuery, filter);
 
         return (
             <div className="app">
@@ -63,11 +97,14 @@ class App extends Component {
                     totalValue={totalValue}
                     rewardedValue={rewardedValue}/>
                 <div className="search-panel">
-                    <SearchPanel />
-                    <AppFilter />
+                    <SearchPanel 
+                        handleChangeParent={this.handleChangeParent}/>
+                    <AppFilter 
+                        buttonsFilter={this.buttonsFilter}
+                        />
                 </div>
                 <EmployersList 
-                    data={data}
+                    data={visibleEmployees}
                     onDelete={this.deleteItem}
                     onToggleStatus={this.onToggleStatus}/>
                 <EmployersAddForm 
