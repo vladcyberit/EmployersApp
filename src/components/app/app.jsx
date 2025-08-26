@@ -17,7 +17,7 @@ class App extends Component {
         this.state = {
             data: employees,
             searchQuery: "",
-            filter: ""
+            filter: "all"
         }
     }
 
@@ -60,12 +60,16 @@ class App extends Component {
     handleSearchFilter = (data, searchQuery, filter) => {
         let filteredData = [...data];
         
-        if (filter === "all") {
-            filteredData
-        } else if (filter === "liked") {
-            filteredData = filteredData.filter(item => item.like) 
-        } else if (filter === "over") {
-            filteredData = filteredData.filter(item => item.salary > 9000)
+        switch (filter) {
+            case "all":
+                filteredData;
+                break;
+            case "liked":
+                filteredData = filteredData.filter(item => item.like);
+                break;
+            case "over":
+                filteredData = filteredData.filter(item => item.salary > 9000);
+                break;
         }
         
         if (searchQuery.trim() !== "") {
@@ -100,6 +104,7 @@ class App extends Component {
                     <SearchPanel 
                         handleChangeParent={this.handleChangeParent}/>
                     <AppFilter 
+                        filter={filter}
                         buttonsFilter={this.buttonsFilter}
                         />
                 </div>
