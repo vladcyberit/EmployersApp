@@ -1,9 +1,9 @@
 import { Component } from "react";
 import { IoAdd } from "react-icons/io5";
 
-import "./employers-add-form.css";
+import "./employees-add-form.css";
 
-class EmployersAddForm extends Component {
+class EmployeesAddForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -159,4 +159,4 @@ class EmployersAddForm extends Component {
     }
 }
  
-export default EmployersAddForm;
+export default EmployeesAddForm;

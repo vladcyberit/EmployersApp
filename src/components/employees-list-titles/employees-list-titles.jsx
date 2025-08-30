@@ -1,6 +1,6 @@
-import "./employers-list-titles.css";
+import "./employees-list-titles.css";
 
-const EmployersListTitles = () => {
+const EmployeesListTitles = () => {
     return (
         <li className="list-titles">
             <span className="title-name">Name</span>
@@ -11,4 +11,4 @@ const EmployersListTitles = () => {
     );
 }
  
-export default EmployersListTitles;
+export default EmployeesListTitles;

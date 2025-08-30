@@ -4,8 +4,8 @@ import { v4 as uuidv4 } from 'uuid';
 import AppHeader from "../app-header/app-header";
 import AppStats from "../app-stats/app-stats";
 import AppFilter from "../app-filter/app-filter";
-import EmployersAddForm from "../employers-add-form/employers-add-form";
-import EmployersList from "../employers-list/employers-list";
+import EmployeesAddForm from "../employees-add-form/employees-add-form";
+import EmployeesList from "../employees-list/employees-list";
 import SearchPanel from "../search-panel/search-panel";
 import employees from "../../data/employees";
 
@@ -108,11 +108,11 @@ class App extends Component {
                         buttonsFilter={this.buttonsFilter}
                         />
                 </div>
-                <EmployersList 
+                <EmployeesList 
                     data={visibleEmployees}
                     onDelete={this.deleteItem}
                     onToggleStatus={this.onToggleStatus}/>
-                <EmployersAddForm 
+                <EmployeesAddForm 
                     onAdd={this.addItem}/>
             </div>
         );

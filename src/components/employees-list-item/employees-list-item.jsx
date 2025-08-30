@@ -1,6 +1,6 @@
-import "./employers-list-item.css";
+import "./employees-list-item.css";
 
-const EmployersListItem = ({ fullName, jobTitle, salary, onDelete, onToggleStatus, increase, like }) => {
+const EmployeesListItem = ({ fullName, jobTitle, salary, onDelete, onToggleStatus, increase, like }) => {
     const isAwarded = `list-group-item d-flex justify-content-between${increase ? " increase" : ""}${like ? " like" : ""}`;
 
     return (
@@ -43,4 +43,4 @@ const EmployersListItem = ({ fullName, jobTitle, salary, onDelete, onToggleStatu
     );
 }
  
-export default EmployersListItem;
+export default EmployeesListItem;

@@ -1,14 +1,14 @@
-import EmployersListItem from "../employers-list-item/employers-list-item";
-import EmployersListTitles from "../employers-list-titles/employers-list-titles";
+import EmployeesListItem from "../employees-list-item/employees-list-item";
+import EmployeesListTitles from "../employees-list-titles/employees-list-titles";
 import ListItemBlank from "../list-item-blank/list-item-blank";
 
-import "./employers-list.css";
+import "./employees-list.css";
 
-const EmployersList = ({ data, onDelete, onToggleStatus }) => {
+const EmployeesList = ({ data, onDelete, onToggleStatus }) => {
     const employeesItems = data.map(item => {
         const { id, ...itemProps } = item;
         return (
-            <EmployersListItem 
+            <EmployeesListItem 
                 key={id}
                 {...itemProps}
                 onDelete={() => onDelete(id)}
@@ -18,10 +18,10 @@ const EmployersList = ({ data, onDelete, onToggleStatus }) => {
 
     return ( 
         <ul className="app-list list-group">
-            <EmployersListTitles />
+            <EmployeesListTitles />
             {data.length === 0 ? <ListItemBlank /> : employeesItems}
         </ul>
     );
 }
  
-export default EmployersList;
+export default EmployeesList;
