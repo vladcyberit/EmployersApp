@@ -16,14 +16,15 @@ const AppFilter = ({ buttonsFilter, filter }) => {
         }
     ];
 
-    const buttons = buttonsData.map(({id, label}) => {
-        const selectedBtn = () => {
-            return (id === filter) ? "btn-primary" : "btn-outline-primary";
-        }
+    const selectedBtn = (id) => {
+        return (id === filter) ? "btn-primary" : "btn-outline-primary";
+    }
+
+    const buttons = buttonsData.map(({ id, label }) => {
         return (
             <button 
                 key={id}
-                className={`btn ${selectedBtn()}`}
+                className={`btn ${selectedBtn(id)}`}
                 type="button"
                 onClick={() => buttonsFilter(id)}>
                     {label}
