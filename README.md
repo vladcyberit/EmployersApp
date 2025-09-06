@@ -1,10 +1,11 @@
-👥 Employers App
+👥 Teamsy
 
 A simple web application for employers to manage their team.
 
 🚀 Features
 - Add new employees
-- Set and update salaries
+- Set salaries
+- Indicate job position
 - Highlight employees for awards or recognition
 
 🛠 Tech Stack
